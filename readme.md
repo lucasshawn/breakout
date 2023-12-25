@@ -8,5 +8,6 @@ detects keyboard input (left and right).
 ```bash
 git clone https://github.com/lucasshawn/breakout.git
 cd breakout
-python3 main.py
+pip3 install -r src/requirements.txt
+python3 src/main.py
 ```
