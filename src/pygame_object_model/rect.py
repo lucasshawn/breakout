@@ -8,6 +8,7 @@ class Rect:
 
     def __init__(self, location: Point, size: Point):
         self.ul = location
+        self.size = size
         self.ll = Point(self.ul.X, self.ul.Y + size.Y)
         self.ur = Point(self.ul.X + size.X, self.ul.Y)
         self.lr = Point(self.ur.X, self.ur.Y + size.Y)
@@ -22,3 +23,6 @@ class Rect:
         '''
         return (r.ul.X < self.ur.X and r.ur.X > self.ul.X and
           r.ul.Y < self.ll.Y and r.ll.Y > self.ul.Y)
+
+    def __str__(self)->str:
+        return f"({self.ul.X},{self.ul.Y},{self.size.X},{self.size.Y})"
