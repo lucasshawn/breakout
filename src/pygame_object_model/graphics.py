@@ -8,6 +8,7 @@ class Graphics:
         #self.surface = pygame.Surface((board_size.X, board_size.Y))
         self.display = pygame.display.set_mode((board_size.X, board_size.Y))
         self.display_dirty = True
+        self.clock = pygame.time.Clock()
 
     def clear(self):
         self.display.fill((0,0,0))
@@ -21,3 +22,12 @@ class Graphics:
         #pygame.display.update()
         pygame.display.flip()
         self.display_dirty = False
+    
+    def tick(self):
+        self.clock.tick(60)/1000
+
+    def is_exit(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return True
+        return False
